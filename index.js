@@ -59,7 +59,6 @@ function addBooks() {
         } else {
             read.checked = false;
         }
-        pages.textContent = myLibrary[bookId].read;
         bookPanel.appendChild(read);
 
         container.appendChild(bookPanel);
