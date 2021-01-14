@@ -57,7 +57,7 @@ addBookToLibrary(investor);
 addBookToLibrary(catchtwentytwo);
 
 function addBooks() {
-    const container = document.querySelector('.container')
+    const container = document.querySelector('.card-container')
 
     while (container.lastElementChild) {
         container.removeChild(container.lastElementChild);
