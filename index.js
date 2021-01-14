@@ -68,3 +68,7 @@ function addBooks() {
 }
 
 addBooks();
+
+const newBookButton = document.querySelector('.new-book');
+const clearBooksButton = document.querySelector('.reset');
+
