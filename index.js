@@ -72,3 +72,23 @@ addBooks();
 const newBookButton = document.querySelector('.new-book');
 const clearBooksButton = document.querySelector('.reset');
 
+const overlay = document.querySelector('.popup-container');
+const newBookPopup = document.querySelector('.new');
+const clearBooksPopup = document.querySelector('.clear');
+const clearOverlay = document.querySelector('.cancel-button');
+
+newBookButton.addEventListener('click', function() {
+    overlay.classList.add('active');
+    newBookPopup.classList.add('active');
+});
+
+clearBooksButton.addEventListener('click', function() {
+    overlay.classList.add('active');
+    clearBooksPopup.classList.add('active');
+});
+
+clearOverlay.addEventListener('click', function() {
+    overlay.classList.remove('active');
+    newBookPopup.classList.remove('active');
+    clearBooksPopup.classList.remove('active');
+});
