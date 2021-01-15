@@ -61,7 +61,7 @@ h1 { font-size: 3em; }
     align-items: center;
     margin: 3%;
     
-    height: 233px;
+    height: 100%;
     width: 350px;
 }
 
@@ -73,13 +73,27 @@ h3 {
 
 }
 
-.read { background-color: #BEE3DB;}
-.unread {background-color: #E9AFA3;}
+.read { background-color: #BEE3DB; }
+.unread { background-color: #E9AFA3; }
+.read-toggle {
+    width: 100%;
+    border: 0px;
+    border-top: 1px solid #555B6E;
+    bottom: 0;
+    margin-top: 5px;
+}
 .remove-book {
-
+    background-color: #ff2828;
+    width: 100%;
+    border: 0px;
+    bottom: 0;
 }
 
-button {
+.new-book,
+.reset,
+.cancel-button,
+.clear-confirm,
+.submit-book {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 1em;
     margin: 0 75px;
@@ -104,21 +118,32 @@ button {
 }
 
 .popup-form {
-    display: none;
+    display: flex;
+
     background-color: #DF8C7C;
     border: 2px solid #555B6E;
+
     width: 33%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 20px;
+    
+    z-index: -1;
+    opacity: 0;
 }
 
 .clear {}
 
 .active {
-    display: block;
     z-index: 10;
     opacity: 1;
 }
+
+/*
+TO-DO
+-Finish CSS on bookPanels, and the popup forms.
+-Attempt to add in a local storage system.
+
+*/
