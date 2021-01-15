@@ -52,10 +52,6 @@ function addBookToLibrary(book) {
   myLibrary.push(book);
 }
 
-addBookToLibrary(hobbit);
-addBookToLibrary(investor);
-addBookToLibrary(catchtwentytwo);
-
 function addBooks() {
     const container = document.querySelector('.card-container')
 
@@ -67,7 +63,12 @@ function addBooks() {
     }
 }
 
-addBooks();
+function startup() {
+    addBookToLibrary(hobbit);
+    addBookToLibrary(investor);
+    addBookToLibrary(catchtwentytwo);
+    addBooks();
+}
 
 const newBookButton = document.querySelector('.new-book');
 const clearBooksButton = document.querySelector('.reset');
@@ -75,7 +76,6 @@ const clearBooksButton = document.querySelector('.reset');
 const overlay = document.querySelector('.popup-container');
 const newBookPopup = document.querySelector('.new');
 const clearBooksPopup = document.querySelector('.clear');
-const clearOverlay = document.querySelector('.cancel-button');
 
 newBookButton.addEventListener('click', function() {
     overlay.classList.add('active');
@@ -87,8 +87,22 @@ clearBooksButton.addEventListener('click', function() {
     clearBooksPopup.classList.add('active');
 });
 
-clearOverlay.addEventListener('click', function() {
+function clearScreen() {
     overlay.classList.remove('active');
     newBookPopup.classList.remove('active');
     clearBooksPopup.classList.remove('active');
+}
+
+const clearOverlay = document.querySelectorAll('.cancel-button');
+
+clearOverlay.forEach(btn => btn.addEventListener('click', clearScreen));
+
+const clearBooksConfirmButton = document.querySelector('.clear-confirm');
+
+clearBooksConfirmButton.addEventListener('click', function() {
+    myLibrary = [];
+    addBooks();
+    clearScreen();
 });
+
+startup();
