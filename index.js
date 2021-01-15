@@ -78,6 +78,7 @@ const newBookPopup = document.querySelector('.new');
 const clearBooksPopup = document.querySelector('.clear');
 
 newBookButton.addEventListener('click', function() {
+    addBookFromForm.reset();
     overlay.classList.add('active');
     newBookPopup.classList.add('active');
 });
@@ -104,5 +105,20 @@ clearBooksConfirmButton.addEventListener('click', function() {
     addBooks();
     clearScreen();
 });
+
+const addBookFromForm = document.querySelector('.add-book-form');
+
+addBookFromForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const title = document.getElementById('newTitle').value;
+    const author = document.getElementById('newAuthor').value;
+    const year = document.getElementById('newYear').value;
+    const pages = document.getElementById('newPages').value;
+    const read = document.getElementById('newRead').checked;
+    let newBook = new Book(title, author, year, pages, read);
+    addBookToLibrary(newBook);
+    addBooks();
+    clearScreen();
+})
 
 startup();

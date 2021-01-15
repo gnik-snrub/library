@@ -28,13 +28,14 @@
 
     <div class = "popup-container">
         <div class = "popup-form new">
-            <form>
+            <form class = "add-book-form">
                 Add a new book<br>
-                <input type = "text" id = "newBookTitle" placeholder = "Title"><br>
-                <input type = "text" id = "newBookAuthor" placeholder = "Author"><br>
-                <input type = "number" id = "newBookYear" placeholder = "Year"><br>
-                <input type = "number" id = "newBookPages" placeholder = "Pages"><br>
-                <input type = "checkbox" id = "newBookRead">
+                <input type = "text" id = "newTitle" placeholder = "Title" required><br>
+                <input type = "text" id = "newAuthor" placeholder = "Author" required><br>
+                <input type = "number" id = "newYear" placeholder = "Year" required><br>
+                <input type = "number" id = "newPages" placeholder = "Pages" required><br>
+                <input type = "checkbox" id = "newRead">
+                <button type = "submit">Submit</button>
             </form>
             <button class = "cancel-button">Cancel</button>
         </div>
