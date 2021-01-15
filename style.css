@@ -65,6 +65,20 @@ h1 { font-size: 3em; }
     width: 350px;
 }
 
+h2 {
+
+}
+
+h3 {
+
+}
+
+.read { background-color: #BEE3DB;}
+.unread {background-color: #DF8C7C;}
+.remove-book {
+    
+}
+
 button {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 1em;

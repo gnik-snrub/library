@@ -12,34 +12,29 @@ function Book(title, author, year, pages, read) {
         bookPanel.classList.add('book');
 
         const title = document.createElement('h2');
-        title.classList.add('title')
         title.textContent = this.title;
         bookPanel.appendChild(title);
 
         const author = document.createElement('h3');
-        author.classList.add('author')
-        author.textContent = this.author;
+        author.textContent = this.author + ', ' + this.year;
         bookPanel.appendChild(author);
 
-        const year = document.createElement('div');
-        year.classList.add('year')
-        year.textContent = this.year;
-        bookPanel.appendChild(year);
-
         const pages = document.createElement('div');
-        pages.classList.add('pages')
         pages.textContent = this.pages;
         bookPanel.appendChild(pages);
 
-        const read = document.createElement('input');
-        read.classList.add('read')
-        read.setAttribute('type', 'checkbox');
+        const readToggle = document.createElement('button');
+        readToggle.classList.add('read-toggle');
         if (this.read) {
-            read.checked = true;
+            readToggle.classList.add('read');
+            readToggle.textContent = "Read"
         } else {
-            read.checked = false;
+            readToggle.classList.add('unread');
+            readToggle.textContent = "Unread"
         }
-        bookPanel.appendChild(read);
+        bookPanel.appendChild(readToggle);
+
+        // REMOVE BUTTON HERE
         return bookPanel
     }
 }
@@ -60,6 +55,21 @@ function addBooks() {
     }
     for (book in myLibrary) {
         container.appendChild(myLibrary[book].addBook());
+    }
+
+    const removeBookButtons = document.querySelectorAll('.read-toggle');
+    removeBookButtons.forEach(btn => btn.addEventListener('click', function() { toggleReadStatus(btn) }));
+
+    function toggleReadStatus(btn) {
+        if (btn.classList.contains('read')) {
+            btn.classList.add('unread');
+            btn.classList.remove('read');
+            btn.textContent = "Unread";
+        } else if (btn.classList.contains('unread')) {
+            btn.classList.add('read');
+            btn.classList.remove('unread');
+            btn.textContent = "Read";
+        }
     }
 }
 
@@ -110,6 +120,7 @@ const addBookFromForm = document.querySelector('.add-book-form');
 
 addBookFromForm.addEventListener('submit', function(e) {
     e.preventDefault();
+
     const title = document.getElementById('newTitle').value;
     const author = document.getElementById('newAuthor').value;
     const year = document.getElementById('newYear').value;
@@ -117,8 +128,9 @@ addBookFromForm.addEventListener('submit', function(e) {
     const read = document.getElementById('newRead').checked;
     let newBook = new Book(title, author, year, pages, read);
     addBookToLibrary(newBook);
+    
     addBooks();
     clearScreen();
-})
+});
 
 startup();
