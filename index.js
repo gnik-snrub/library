@@ -7,7 +7,7 @@ function Book(title, author, year, pages, read) {
     this.pages = pages + ' pg';
     this.read = read;
 
-    this.addBook = function() {
+    this.addBook = function(val) {
         const bookPanel = document.createElement('div');
         bookPanel.classList.add('book');
 
@@ -34,7 +34,12 @@ function Book(title, author, year, pages, read) {
         }
         bookPanel.appendChild(readToggle);
 
-        // REMOVE BUTTON HERE
+        const removeBook = document.createElement('button');
+        removeBook.classList.add('remove-book');
+        removeBook.textContent = "Remove Book";
+        bookPanel.appendChild(removeBook);
+
+        bookPanel.setAttribute('data-value', val);
         return bookPanel
     }
 }
@@ -53,12 +58,14 @@ function addBooks() {
     while (container.lastElementChild) {
         container.removeChild(container.lastElementChild);
     }
+    let i = 0;
     for (book in myLibrary) {
-        container.appendChild(myLibrary[book].addBook());
+        container.appendChild(myLibrary[book].addBook(i));
+        i++;
     }
 
-    const removeBookButtons = document.querySelectorAll('.read-toggle');
-    removeBookButtons.forEach(btn => btn.addEventListener('click', function() { toggleReadStatus(btn) }));
+    const readBookButtons = document.querySelectorAll('.read-toggle');
+    readBookButtons.forEach(btn => btn.addEventListener('click', function() { toggleReadStatus(btn) }));
 
     function toggleReadStatus(btn) {
         if (btn.classList.contains('read')) {
@@ -70,6 +77,14 @@ function addBooks() {
             btn.classList.remove('unread');
             btn.textContent = "Read";
         }
+    }
+
+    const removeBookButtons = document.querySelectorAll('.remove-book');
+    removeBookButtons.forEach(btn => btn.addEventListener('click', function() { removeBook(btn) }));
+    
+    function removeBook(btn) {
+        myLibrary.splice(btn.getAttribute('data-value'), 1);
+        addBooks();
     }
 }
 
