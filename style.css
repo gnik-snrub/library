@@ -40,7 +40,6 @@ h1 { font-size: 3em; }
     align-items: center;
 }
 
-
 .card-container {
     margin: 100px auto;
     width: 90%;
@@ -65,12 +64,8 @@ h1 { font-size: 3em; }
     width: 350px;
 }
 
-h2 {
-
-}
-
-h3 {
-
+button:focus {
+    outline: none;
 }
 
 .read { background-color: #BEE3DB; }
@@ -89,17 +84,18 @@ h3 {
     bottom: 0;
 }
 
-.new-book,
-.reset,
-.cancel-button,
-.clear-confirm,
-.submit-book {
+.standard-button {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 1em;
     margin: 0 75px;
     padding: 10px 15px;
     background-color: #E9AFA3;
     border: 1px solid #555B6E;
+    transition: .2s;
+}
+
+.standard-button:hover {
+    background-color: #F3D4CE;
 }
 
 .popup-container {

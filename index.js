@@ -36,10 +36,10 @@ function Book(title, author, year, pages, read) {
 
         const removeBook = document.createElement('button');
         removeBook.classList.add('remove-book');
+        removeBook.setAttribute('data-value', val);
         removeBook.textContent = "Remove Book";
         bookPanel.appendChild(removeBook);
 
-        bookPanel.setAttribute('data-value', val);
         return bookPanel
     }
 }
