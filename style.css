@@ -7,6 +7,31 @@ body {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.bg {
+    background-image: url('./bg.jpg');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: auto;
+    z-index: -2;
+}
+
+.wrapper {
+    display: absolute;
+    background-color: #e9afa3af;
+    margin-top: -20px;
+    margin-right: -14px;
+    height: 100%;
+    overflow: auto;
+    z-index: -1;
+}
+
 header, footer {
     background-color: #DF8C7C;
 

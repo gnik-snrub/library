@@ -93,8 +93,6 @@ function addBooks() {
 
 function startup() {
     addBookToLibrary(hobbit);
-    addBookToLibrary(investor);
-    addBookToLibrary(catchtwentytwo);
     addBooks();
 }
 

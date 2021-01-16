@@ -5,49 +5,51 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class = "wrapper">
-
-        <header>
-            <div class = "heading-container">
-                <img class="logo" src="./berry.png">
-                <h1>Liberry</h1>
-                <img class="logo" src="./berry.png">
-            </div>
-        </header>
+    <div class = 'bg'>
+        <div class = "wrapper">
     
-        <main class = "card-container"></main>
+            <header>
+                <div class = "heading-container">
+                    <img class="logo" src="./berry.png">
+                    <h1>Liberry</h1>
+                    <img class="logo" src="./berry.png">
+                </div>
+            </header>
+        
+            <main class = "card-container"></main>
+        
+            <footer>
+                <div class = "button-container">
+                    <button class = "new-book standard-button">New book</button>
+                    <button class = "reset standard-button">Clear all</button>
+                </div>
+            </footer>
     
-        <footer>
-            <div class = "button-container">
-                <button class = "new-book standard-button">New book</button>
-                <button class = "reset standard-button">Clear all</button>
-            </div>
-        </footer>
-
-    </div>
-
-    <div class = "popup-container">
-        <div class = "popup-form new">
-            <form class = "add-book-form" autocomplete = "off">
-                <p class = "form-title">Add a new book</p>
-                <input type = "text" id = "newTitle" placeholder = "Title" required><br>
-                <input type = "text" id = "newAuthor" placeholder = "Author" required><br>
-                <input type = "number" id = "newYear" placeholder = "Year" required><br>
-                <input type = "number" id = "newPages" placeholder = "Pages" required><br>
-                <div class = "checkbox-label">
-                    Read<input type = "checkbox" id = "newRead">
-                </div>
-                <div class = "h-buttons">
-                    <button type = "submit" class = "submit-book standard-button">Submit</button>
-                    <button type = "button" class = "cancel-button standard-button">Cancel</button>
-                </div>
-            </form>
         </div>
-        <div class = "popup-form clear">
-            <p class = "form-title">Are you sure you want to clear all books.</p>
-            <div class = "h-buttons">
-                <button class = "clear-confirm standard-button">Confirm</button>
-                <button class = "cancel-button standard-button">Cancel</button>
+    
+        <div class = "popup-container">
+            <div class = "popup-form new">
+                <form class = "add-book-form" autocomplete = "off">
+                    <p class = "form-title">Add a new book</p>
+                    <input type = "text" id = "newTitle" placeholder = "Title" required><br>
+                    <input type = "text" id = "newAuthor" placeholder = "Author" required><br>
+                    <input type = "number" id = "newYear" placeholder = "Year" required><br>
+                    <input type = "number" id = "newPages" placeholder = "Pages" required><br>
+                    <div class = "checkbox-label">
+                        Read<input type = "checkbox" id = "newRead">
+                    </div>
+                    <div class = "h-buttons">
+                        <button type = "submit" class = "submit-book standard-button">Submit</button>
+                        <button type = "button" class = "cancel-button standard-button">Cancel</button>
+                    </div>
+                </form>
+            </div>
+            <div class = "popup-form clear">
+                <p class = "form-title">Are you sure you want to clear all books.</p>
+                <div class = "h-buttons">
+                    <button class = "clear-confirm standard-button">Confirm</button>
+                    <button class = "cancel-button standard-button">Cancel</button>
+                </div>
             </div>
         </div>
     </div>
