@@ -11,15 +11,18 @@ function Book(title, author, year, pages, read) {
         const bookPanel = document.createElement('div');
         bookPanel.classList.add('book');
 
-        const title = document.createElement('h2');
+        const title = document.createElement('div');
+        title.classList.add('line1');
         title.textContent = this.title;
         bookPanel.appendChild(title);
 
-        const author = document.createElement('h3');
-        author.textContent = this.author + ', ' + this.year;
-        bookPanel.appendChild(author);
+        const authorAndYear = document.createElement('div');
+        authorAndYear.classList.add('line2');
+        authorAndYear.textContent = this.author + ', ' + this.year;
+        bookPanel.appendChild(authorAndYear);
 
         const pages = document.createElement('div');
+        pages.classList.add('line3');
         pages.textContent = this.pages;
         bookPanel.appendChild(pages);
 
