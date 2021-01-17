@@ -24,7 +24,7 @@ html, body {
 
 .wrapper {
     display: absolute;
-    background-color: #e9afa3af;
+    background-color: #e9afa37e;
     margin-top: -20px;
     margin-right: -14px;
     height: 100%;
@@ -78,7 +78,7 @@ h1 { font-size: 3em; }
 
 .book {
     border: 1px solid #555B6E;
-    background-color: #BEE3DB;
+    background-color: #bee3dbb9;
 
     display: flex;
     flex-direction: column;
@@ -106,8 +106,8 @@ button:focus {
     outline: none;
 }
 
-.read { background-color: #BEE3DB; }
-.unread { background-color: #E9AFA3; }
+.read { background-color: #bee3db00; }
+.unread { background-color: #e9afa3a9; }
 .read-toggle {
     width: 100%;
     border: 0px;
@@ -116,7 +116,7 @@ button:focus {
     margin-top: 5px;
 }
 .remove-book {
-    background-color: #ff2828;
+    background-color: #ff2828a9;
     width: 100%;
     border: 0px;
     bottom: 0;
