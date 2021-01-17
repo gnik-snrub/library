@@ -150,18 +150,3 @@ addBookFromForm.addEventListener('submit', function(e) {
 });
 
 startup();
-startup();
-startup();
-startup();
-startup();
-startup();
-startup();
-startup();
-startup();
-startup();
-startup();
-startup();
-startup();
-startup();
-startup();
-startup();
